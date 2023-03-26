@@ -8,12 +8,6 @@ export const ContactsPage = () => {
   const [email, setEmail] = useState('');
   const [duplicate, setDuplicate] = useState(false);
 
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!diplicate){
@@ -39,10 +33,6 @@ export const ContactsPage = () => {
       setDuplicate(false);
     }
   }, [name, contacts, duplicate]);
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
 
   return (
     <div>
