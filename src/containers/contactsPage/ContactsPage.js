@@ -1,8 +1,8 @@
 import { React, useState, useEffect} from "react";
-import ContactForm from './ContactForm/ContactForm';
-import TileList from './TileList/TileList';
+import { ContactForm } from '../../components/contactForm/ContactForm';
+import { TileList } from '../../components/tileList/TileList';
 
-export const ContactsPage = () => {
+export const ContactsPage = ({contacts, addContact}) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ export const ContactsPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!diplicate){
+    if(!duplicate){
       addContact(name, phone, email);
       setName('');
       setPhone('');
@@ -35,7 +35,7 @@ export const ContactsPage = () => {
   }, [name, contacts, duplicate]);
 
   return (
-    <div>
+    <>
      <section>
         <h2>
           Add Contact
@@ -56,6 +56,6 @@ export const ContactsPage = () => {
         <h2>Contacts</h2>
         <TileList tiles={contacts} />
       </section>
-    </div>
+    </>
   );
 };
